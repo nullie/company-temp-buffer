@@ -43,8 +43,7 @@
                    (move-overlay company-temp-buffer--selection-overlay selection-point (line-end-position))
                  (progn (setq company-temp-buffer--selection-overlay (make-overlay selection-point (line-end-position)))
                         (overlay-put company-temp-buffer--selection-overlay 'face 'highlight)))
-               (set-window-point (get-buffer-window) selection-point))
-             (with-selected-window (get-buffer-window) (recenter)))))))))
+               (set-window-point (get-buffer-window) selection-point)))))))))
 
 (defun company-temp-buffer-hide ()
   (let ((win (get-buffer-window company-temp-buffer)))
